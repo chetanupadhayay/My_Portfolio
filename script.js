@@ -1,58 +1,68 @@
-/*==========================toggle icon navbar=========================*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+// Toggle Navbar Icon & Navigation
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('fa-xmark');
-    navbar.classList.toggle('active');
-};
-
-/*==========================scroll section active link=========================*/
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        }
-    });
-
-    /*==========================sticky navbar=========================*/
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-    /*==========================remove toggle icon and navbar=========================*/
-    menuIcon.classList.remove('fa-xmark');
-    navbar.classList.remove('active');
-};
-
-/*==========================scroll reveal=========================*/
-ScrollReveal({ 
-    distance: '80px',
-    duration: 2000,
-    delay: 200,
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.toggle("fa-xmark");
+  navbar.classList.toggle("active");
 });
 
-ScrollReveal().reveal('.home-content, heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-contact h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-contact p, .about-content', { origin: 'right' });
+// Scroll Section Active Link and Sticky Header
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
 
-/*==========================typed js=========================*/
-const typed = new Typed('.multiple-text', {
-    strings: ['Data Analyst'],
-    typeSpeed: 70,
-    backSpeed: 0,
-    backDelay: 0,
-    loop: false,
-    showCursor: false
+window.addEventListener("scroll", () => {
+  let currentScroll = window.scrollY;
+
+  sections.forEach((section) => {
+    let sectionTop = section.offsetTop - 150;
+    let sectionHeight = section.offsetHeight;
+    let sectionId = section.getAttribute("id");
+
+    if (
+      currentScroll >= sectionTop &&
+      currentScroll < sectionTop + sectionHeight
+    ) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      const activeLink = document.querySelector(
+        `header nav a[href*="${sectionId}"]`
+      );
+      if (activeLink) activeLink.classList.add("active");
+    }
+  });
+
+  // Sticky Header
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", currentScroll > 100);
+
+  // Close Menu on Scroll
+  menuIcon.classList.remove("fa-xmark");
+  navbar.classList.remove("active");
+});
+
+// Manual Nav Button Highlight (for mobile)
+const navButtons = document.querySelectorAll(".nav-btn");
+navButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    navButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Close mobile menu on click
+    menuIcon.classList.remove("fa-xmark");
+    navbar.classList.remove("active");
+  });
+});
+
+// Typed.js Initialization
+const typed = new Typed(".multiple-text", {
+  strings: [
+    "Data Analyst",
+    "SQL Expert",
+    "PowerBI Developer",
+    "Problem Solver",
+  ],
+  typeSpeed: 100,
+  backSpeed: 60,
+  backDelay: 1500,
+  loop: true,
 });
