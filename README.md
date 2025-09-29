@@ -21,19 +21,28 @@ Check out my portfolio website here:
 ## 📌 Featured Projects
 
 ### 📊 Excel-Based Analysis
-1. **Bike Dekho Sales Analysis** – Analyzing sales trends, revenue, and performance metrics.  
-2. **Financial Performance Dashboard** – Tracking KPIs and financial performance.  
-3. **Movie Sale Performance Analysis** – Insights on movie ticket sales and revenue patterns.  
+1. **Bike Dekho Sales Analysis** – Conducted detailed analysis of sales trends, revenue, and customer behavior.
+Built pivot tables, charts, and dashboards to visualize monthly and yearly performance.
+Identified top-selling products, regions, and sales opportunities for strategic decision-making.
+
+3. **Financial Performance Dashboard** – Created comprehensive Excel dashboards to track KPIs, revenue, expenses, and profit margins.
+Applied formulas, conditional formatting, and charts to highlight key metrics.
+Helped identify cost-saving opportunities and areas for business growth.
+
+5. **Movie Sale Performance Analysis** – Analyzed movie ticket sales, revenue, and audience demographics.
+Visualized trends using Excel charts to identify peak seasons and high-performing movies.
+Provided actionable insights for marketing and scheduling strategies.  
 
 ### 📈 Power BI Dashboard
-1. **Flights Emirates Dashboard** – Interactive dashboard tracking flight performance and operational metrics.  
+1. **Flights Emirates Dashboard** – Designed interactive Power BI dashboards to track flight operations, on-time performance, and passenger trends.
+Connected multiple data sources, cleaned and transformed data for analysis.
+Enabled stakeholders to monitor operational efficiency, revenue streams, and service performance. 
 
 ---
 
 ## 📫 Connect With Me
 - [LinkedIn](https://www.linkedin.com/in/chetan-upadhayay-014c/)  
 - [GitHub](https://github.com/chetanupadhayay)  
-- [Email](mailto:youremail@example.com)  
 
 ---
 
